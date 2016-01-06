@@ -1,3 +1,3 @@
 # MageProfis_Zanox
 
-Magento Module to integrate Zanox Trackingcodes
+Magento Module to integrate Zanox Tracking
