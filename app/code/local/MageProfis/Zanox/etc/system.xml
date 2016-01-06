@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <mageprofis translate="label">
+            <label>Mageprofis</label>
+            <sort_order>110</sort_order>
+        </mageprofis>
+    </tabs>
+    <sections>
+        <zanox translate="label">
+            <label>Zanox</label>
+            <tab>mageprofis</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>90</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>Zanox Ids</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                      <active translate="label">
+                          <label>Enabled</label>
+                          <frontend_type>select</frontend_type>
+                          <source_model>adminhtml/system_config_source_yesno</source_model>
+                          <sort_order>10</sort_order>
+                          <show_in_default>1</show_in_default>
+                          <show_in_website>1</show_in_website>
+                          <show_in_store>1</show_in_store>
+                      </active>
+                        <master_home translate="label">
+                            <label>Mastertag Home</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>ID für Home Page Mastertag Code</comment>
+                        </master_home>
+                        <master_cat translate="label">
+                            <label>Mastertag Category</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>ID für Category Page Mastertag Code</comment>
+                        </master_cat>
+                        <master_product translate="label">
+                            <label>Mastertag Product</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>ID für Product Page Mastertag Code</comment>
+                        </master_product>
+                        <master_search translate="label">
+                            <label>Mastertag Search</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>ID für Search Page Mastertag Code</comment>
+                        </master_search>
+                        <master_cart translate="label">
+                            <label>Mastertag Cart</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>ID für Cart Page Mastertag Code</comment>
+                        </master_cart>
+                        <master_checkout translate="label">
+                            <label>Mastertag Checkout</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>ID für Checkout Page Mastertag Code</comment>
+                        </master_checkout>
+                        <sales_success translate="label">
+                            <label>PartnerID Sales Tracking</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>PartnerID für das Sales Tracking</comment>
+                        </sales_success>
+                    </fields>
+                </general>
+            </groups>
+        </zanox>
+    </sections>
+</config>

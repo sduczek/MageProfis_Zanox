@@ -1,0 +1,31 @@
+
+<?php $cart = Mage::getModel('checkout/cart')->getQuote();
+$items = array();
+
+foreach ($cart->getAllItems() as $item) {
+    $itemnow = array();
+    $itemnow['identifier'] = $item->getProduct()->getId();
+    $itemnow['amount'] = $item->getProduct()->getFinalPrice();
+    $itemnow['currency'] ='EUR';
+    $itemnow['quantitiy'] = (string) $item->getQty();
+    $items[] = $itemnow;
+}
+
+
+?>
+
+<!-- Start of Basket Page Mastertag Code: -->
+			<div class="zx_<?php echo Mage::getStoreConfig('zanox/general/master_cart'); ?> zx_mediaslot">
+				<script type="text/javascript">
+                    var zx_products = <?php echo json_encode($items);?>;
+
+					window._zx = window._zx || [];
+					window._zx.push({"id":"<?php echo Mage::getStoreConfig('zanox/general/master_cart'); ?>"});
+					(function(d) {
+						var s = d.createElement("script"); s.async = true;
+						s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//static.zanox.com/scripts/zanox.js";
+						var a = d.getElementsByTagName("script")[0]; a.parentNode.insertBefore(s, a);
+					}(document));
+				</script>
+			</div>
+<!-- End of Basket Page Mastertag Code -->

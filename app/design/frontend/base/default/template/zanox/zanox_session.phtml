@@ -1,0 +1,12 @@
+<?php
+    $zanid = $this->getRequest()->getParam('zanid');
+        if($zanid){
+            if($zanid != Mage::getSingleton('checkout/session')->getZanoxId()){
+                Mage::getSingleton('checkout/session')->unsetData('ZanoxId');
+                Mage::getSingleton('checkout/session')->setZanoxId($_GET['zanid']);
+            }
+            else{
+                Mage::getSingleton('checkout/session')->setZanoxId($_GET['zanid']);
+            }
+        }
+?>

@@ -1,0 +1,19 @@
+<!-- BEGINN des zanox-affiliate HTML-Code -->
+<!-- (Der HTML-Code darf im Sinne der einwandfreien Funktionalität nicht verändert werden!) -->
+
+<?php 
+    $lastOrderId = Mage::getSingleton('checkout/session')->getLastOrderId();
+    $order = Mage::getSingleton('sales/order');
+    $order->load($lastOrderId);
+    $total = $order->getGrandTotal();
+?>
+<?php if(Mage::getSingleton('checkout/session')->getZanoxId()): ?>
+   <script type='text/javascript' src='https://ad.zanox.com/pps/?<?php echo Mage::getStoreConfig('zanox/general/sales_success'); ?>&mode=2<?php if(Mage::getSingleton('customer/session')->getCustomerId()){echo '&CustomerID='.Mage::getSingleton('customer/session')->getCustomerId();}?>&OrderID=<?php echo $lastOrderId;?>&CurrencySymbol=EUR&TotalPrice=<?php echo number_format($total, 2, ".", "");?>&PartnerID=<?php if(Mage::getSingleton('checkout/session')->getZanoxId()){echo Mage::getSingleton('checkout/session')->getZanoxId();}?>'></script> 
+<?php else:?>
+  <script type='text/javascript' src='https://ad.zanox.com/pps/?<?php echo Mage::getStoreConfig('zanox/general/sales_success'); ?>&mode=2<?php if (Mage::getSingleton('customer/session')->getCustomerId()){echo '&CustomerID='.Mage::getSingleton('customer/session')->getCustomerId();}?>&OrderID=<?php echo $lastOrderId;?>&CurrencySymbol=EUR&TotalPrice=<?php echo number_format($total, 2, ".", "");?>&PartnerID=<?php if(Mage::getSingleton('checkout/session')->getZanoxId()){echo Mage::getSingleton('checkout/session')->getZanoxId();} ?>'></script>
+<?php endif; ?>   
+<noscript>
+<img src='https://ad.zanox.com/pps/?<?php echo Mage::getStoreConfig('zanox/general/sales_success');?>&mode=2<?php if(Mage::getSingleton('customer/session')->getCustomerId()){echo '&CustomerID='.Mage::getSingleton('customer/session')->getCustomerId();}?>&OrderID=<?php echo $lastOrderId;?>&CurrencySymbol=EUR&TotalPrice=<?php echo number_format($total, 2, ".","");?>&PartnerID=<?php if(Mage::getSingleton('checkout/session')->getZanoxId()){ echo Mage::getSingleton('checkout/session')->getZanoxId();}?>width="1" height="1"'/>
+</noscript>
+
+<!-- ENDE des zanox-affiliate HTML-Code -->

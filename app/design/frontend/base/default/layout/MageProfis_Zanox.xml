@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <default>
+    <reference name="before_body_end">
+      <block type="core/template" name="zanox_session" template="zanox/zanox_session.phtml" after="-"></block>
+    </reference>      
+  <reference name="head">
+  </reference>
+  </default>
+    <cms_index_index>
+        <reference name="content">
+            <block type="cms/block" name="zanox_home">
+                    <action method="setBlockId">
+                        <blockId>zanox_home</blockId>
+                    </action>
+            </block>
+        </reference>
+    </cms_index_index>
+    <catalog_category_view>
+      <reference name="content">
+          <block type="cms/block" name="zanox_category">
+                      <action method="setBlockId">
+                          <blockId>zanox_category</blockId>
+                      </action>
+                  </block>
+      </reference>
+    </catalog_category_view>
+    <catalog_product_view>
+      <reference name="content">
+            <block type="cms/block" name="zanox_product">
+                  <action method="setBlockId">
+                      <blockId>zanox_product</blockId>
+                  </action>
+            </block>
+      </reference>
+    </catalog_product_view>
+    <catalogsearch_result_index>
+      <reference name="content">
+          <block type="core/template" name="zanox_search" template="zanox/zanox_search.phtml" after="-"></block>
+      </reference>
+    </catalogsearch_result_index>
+      <checkout_cart_index>
+          <reference name="content">
+              <remove name="checkout.cart.top_methods" />
+              <block type="core/template" name="zanox_cart" template="zanox/zanox_cart.phtml" after="-"></block>
+          </reference>
+      </checkout_cart_index>
+      <checkout_onepage_index>
+          <reference name="content">
+              <block type="core/template" name="zanox_checkout" template="zanox/zanox_checkout.phtml" after="-"></block>
+          </reference>
+      </checkout_onepage_index>
+      <checkout_onepage_success>
+          <reference name="content">
+              <block type="core/template" name="zanox_checkout" template="zanox/zanox_checkout.phtml" after="-"></block>
+          </reference>
+      </checkout_onepage_success>
+      <checkout_onepage_success>
+          <reference name="content">
+              <block type="core/template" name="zanox_checkout_success" template="zanox/zanox_success.phtml" after="-"></block>
+          </reference>
+      </checkout_onepage_success>
+  </layout>

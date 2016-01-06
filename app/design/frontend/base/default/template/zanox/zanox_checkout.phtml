@@ -1,0 +1,33 @@
+<?php
+    $_customerId = Mage::getSingleton('customer/session')->getCustomerId();
+    $lastOrderId = Mage::getSingleton('checkout/session')->getLastOrderId();
+    $order = Mage::getSingleton('sales/order');
+    $order->load($lastOrderId);
+    $orderitems = array();
+    foreach($order->getAllItems() as $item) {
+        $itemnow = array();
+        $itemnow['identifier'] = $item->getProduct()->getId();
+        $itemnow['amount'] = number_format($item->getProduct()->getFinalPrice(), 2, '.', '');
+        $itemnow['currency'] ='EUR';
+        $itemnow['quantity'] = (string) intval($item->getQtyOrdered());
+        $orderitems[] = $itemnow;
+    }
+?>
+<!-- Start of Checkout Page Mastertag Code: -->
+			<div class="zx_<?php echo Mage::getStoreConfig('zanox/general/master_checkout'); ?> zx_mediaslot">
+				<script type="text/javascript">
+                    var zx_products = <?php echo json_encode($orderitems) ?>;
+
+                        var zx_transaction = "<?php echo $lastOrderId ?>";
+                        var zx_total_amount = "<?php echo number_format($order->getData('base_grand_total'), 2, '.', ''); ?>";
+                        var zx_total_currency = "EUR";
+					window._zx = window._zx || [];
+					window._zx.push({"id":"<?php echo Mage::getStoreConfig('zanox/general/master_checkout'); ?>"});
+					(function(d) {
+						var s = d.createElement("script"); s.async = true;
+						s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//static.zanox.com/scripts/zanox.js";
+						var a = d.getElementsByTagName("script")[0]; a.parentNode.insertBefore(s, a);
+					}(document));
+				</script>
+			</div>
+<!-- End of Checkout Page Mastertag Code -->

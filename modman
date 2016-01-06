@@ -1,0 +1,5 @@
+app/code/local/MageProfis/Zanox/* app/code/local/MageProfis/Zanox
+app/design/frontend/base/default/layout/MageProfis_Zanox.xml  app/design/frontend/base/default/layout/MageProfis_Zanox.xml
+app/design/frontend/base/default/template/zanox/  app/design/frontend/base/default/template/zanox
+app/etc/modules/MageProfis_Zanox.xml  app/etc/modules/MageProfis_Zanox.xml
+
