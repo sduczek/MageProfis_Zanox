@@ -2,7 +2,7 @@
 <config>
     <modules>
         <MageProfis_Zanox>
-            <version>1.0.0.0</version>
+            <version>1.0.0.1</version>
         </MageProfis_Zanox>
     </modules>
     <global>
@@ -64,5 +64,18 @@
             </modules>
         </translate>
     </adminhtml>
+    <default>
+        <zanox>
+            <general>
+                <master_home>Bitte Mastertag fuer die Startseite eintragen</master_home>
+                <master_cat>Bitte Mastertag fuer die Kategorieseite eintragen</master_cat>
+                <master_product>Bitte Mastertag fuer die Produktseite eintragen</master_product>
+                <master_search>Bitte Mastertag fuer die Suchseite eintragen</master_search>
+                <master_cart>Bitte Mastertag fuer die Warenkorbseite eintragen</master_cart>
+                <master_checkout>Bitte Mastertag fuer die Checkoutseite eintragen</master_checkout>
+                <sales_success>Bitte Mastertag fuer die Successseite eintragen</sales_success>
 
+            </general>
+        </zanox>
+    </default>
 </config>

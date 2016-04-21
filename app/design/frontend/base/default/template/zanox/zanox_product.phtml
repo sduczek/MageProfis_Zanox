@@ -4,18 +4,19 @@ $_productinfo = Mage::registry('current_product');
 
 $cleanDescription = strip_tags( $_productinfo->getDescription() ); //Remove HTML Tags
 $cleanDescription = trim( $cleanDescription );
-
+$cleanDescription = htmlspecialchars($cleanDescription)
 ?>
 <!-- Start of Product Page Mastertag Code: -->
 			<div class="zx_<?php echo Mage::getStoreConfig('zanox/general/master_product'); ?> zx_mediaslot">
 				<script type="text/javascript">
+					var bodyclass = document.body.className;
                     var zx_identifier = "<?php echo $_productinfo->getId(); ?>";
                     var zx_fn = "<?php echo $_productinfo->getName(); ?>";
-                    var zx_description = "<?php echo htmlspecialchars($cleanDescription); ?>";
-                    var zx_category = jQuery('body').attr("class").split("category-")[1];
+                    var zx_description = "<?php echo preg_replace('/\n|\r\n|\r/','',$cleanDescription); ?>";
+                    var zx_category = bodyclass.split("category-")[1];
                     var zx_brand = "<?php echo $_productinfo->getManufacturer(); ?>";
-                    var zx_price = "<?php echo $_productinfo->getFinalPrice(); ?>€";
-                    var zx_amount = "<?php echo $_productinfo->getFinalPrice(); ?>";
+                    var zx_price = "<?php echo number_format($_productinfo->getFinalPrice(), 2, '.', ''); ?>€";
+                    var zx_amount = "<?php echo number_format($_productinfo->getFinalPrice(), 2, '.', ''); ?>";
                     var zx_currency = "EUR";
                     var zx_url = "<?php echo $_productinfo->getUrl(); ?>";
                     var zx_photo = "<?php echo $_productinfo->getImageUrl(); ?>";

@@ -3,7 +3,7 @@
   <default>
     <reference name="before_body_end">
       <block type="core/template" name="zanox_session" template="zanox/zanox_session.phtml" after="-"></block>
-    </reference>      
+    </reference>
   <reference name="head">
   </reference>
   </default>
@@ -45,11 +45,16 @@
               <block type="core/template" name="zanox_cart" template="zanox/zanox_cart.phtml" after="-"></block>
           </reference>
       </checkout_cart_index>
-      <checkout_onepage_index>
+      <onepagecheckout_index_success>
           <reference name="content">
               <block type="core/template" name="zanox_checkout" template="zanox/zanox_checkout.phtml" after="-"></block>
           </reference>
-      </checkout_onepage_index>
+      </onepagecheckout_index_success>
+      <onepagecheckout_index_success>
+          <reference name="content">
+              <block type="core/template" name="zanox_checkout_success" template="zanox/zanox_success.phtml" after="-"></block>
+          </reference>
+      </onepagecheckout_index_success>
       <checkout_onepage_success>
           <reference name="content">
               <block type="core/template" name="zanox_checkout" template="zanox/zanox_checkout.phtml" after="-"></block>
@@ -60,4 +65,5 @@
               <block type="core/template" name="zanox_checkout_success" template="zanox/zanox_success.phtml" after="-"></block>
           </reference>
       </checkout_onepage_success>
+
   </layout>
