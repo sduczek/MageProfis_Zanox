@@ -7,7 +7,7 @@ $staticBlock = array(
     'title' => 'Zanox Category',
     'identifier' => 'zanox_category',
     'content' => '<!-- Start of Category Page Mastertag Code: -->
-                    <div class="zx_{{config path='"zanox/general/master_cat"'}}">
+                    <div class="zx_{{config path="zanox/general/master_cat"}}">
                     <script type="text/javascript">// <![CDATA[
                     var bodyclass = document.body.className;
                     var zx_category = bodyclass.split("category-")[2];
